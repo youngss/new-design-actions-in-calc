@@ -98,16 +98,16 @@ public class Design2 extends Application{
 		    	 
 		     }
 		     arr2[0].setText("/");
-		     arr2[1].setText("?");        //
+		     arr2[1].setText("CE");        //
 		     arr2[2].setText(" C ");       
 		     arr2[3].setText("*");
 		     arr2[4].setText("(");
 		     arr2[5].setText(")");
 		     arr2[6].setText("-");
 		     arr2[7].setText("x^2");       //
-		     arr2[8].setText("?");          
+		     arr2[8].setText("sqt");          
 ///////////////////////////////////////////////////////////////////////////////////////////////////		     
-		    //design for lastrow 
+		    //
 		     String [] str = {"0",".", "%" ,"+"};
 		     Button []last_row= new Button[4];
 		    	 for(int i=0;i<4;i++){
@@ -129,7 +129,6 @@ public class Design2 extends Application{
 	
 	st.show();
 	/////////////////////////////////////////////////////////////////////////////////
-	//action for numbers
 	arr[1].setOnAction(e->{
 		text.setText(text.getText()+arr[1].getText());
 		Toolkit.getDefaultToolkit().beep();
@@ -186,4 +185,102 @@ public class Design2 extends Application{
 		});
 		
 	  
-	}}
+		arr2[0].setOnAction(e->{
+			text.setText((text.getText()+" " +arr2[0].getText()+" "));
+			Toolkit.getDefaultToolkit().beep();
+			arr2[0].setStyle("-fx-border-color:black; -fx-background-color: #d9dff0;");
+		});
+		arr2[1].setOnAction(e->{
+			String remind= text.getText();
+			
+			      if(Character.isDigit(remind.charAt(remind.length()-1)))
+					text.setText(remind.substring(0, remind.length()-1));
+			      
+			      else
+			    	  text.setText(remind.substring(0, remind.length()-3));  
+			      Toolkit.getDefaultToolkit().beep();
+			      arr2[1].setStyle("-fx-border-color:black; -fx-background-color: #d9dff0;");
+		});		
+		arr2[2].setOnAction(e->{
+			text.setText("");
+			Toolkit.getDefaultToolkit().beep();
+			arr2[2].setStyle("-fx-border-color:black; -fx-background-color: #3e6993;");
+		});
+		arr2[3].setOnAction(e->{
+			text.setText((text.getText()+" "+arr2[3].getText()+" "));
+			Toolkit.getDefaultToolkit().beep();
+			arr2[3].setStyle("-fx-border-color:black; -fx-background-color: #d9dff0;");
+		});
+		arr2[4].setOnAction(e->{
+			text.setText((text.getText()+arr2[4].getText())+" ");
+			Toolkit.getDefaultToolkit().beep();
+			arr2[4].setStyle("-fx-border-color:black; -fx-background-color: #d9dff0;");
+		});
+		arr2[5].setOnAction(e->{
+			text.setText((text.getText()+" " +arr2[5].getText()));
+			Toolkit.getDefaultToolkit().beep();
+			arr2[5].setStyle("-fx-border-color:black; -fx-background-color: #d9dff0;");
+		});
+		arr2[6].setOnAction(e->{
+			text.setText((text.getText()+" " +arr2[6].getText()+" "));
+			Toolkit.getDefaultToolkit().beep();
+			arr2[6].setStyle("-fx-border-color:black; -fx-background-color: #d9dff0;");
+		});
+		arr2[7].setOnAction(e->{
+			text.setText((text.getText()+" " +"^ 2"));
+			Toolkit.getDefaultToolkit().beep();
+			arr2[7].setStyle("-fx-border-color:black; -fx-background-color: #d9dff0;");
+		});
+		arr2[8].setOnAction(e->{
+			text.setText((text.getText()+" " +arr2[8].getText()+" "));
+			Toolkit.getDefaultToolkit().beep();
+			arr2[8].setStyle("-fx-border-color:black; -fx-background-color: #d9dff0;");
+		});
+		
+		
+		last_row[0].setOnAction(e->{
+			text.setText((text.getText()+last_row[0].getText()));
+			Toolkit.getDefaultToolkit().beep();
+			last_row[0].setStyle("-fx-border-color:black; -fx-background-color: #d9dff0;");
+		});
+		
+		
+		last_row[1].setOnAction(e->{
+			text.setText((text.getText()+" " +last_row[1].getText()));
+			Toolkit.getDefaultToolkit().beep();
+			last_row[1].setStyle("-fx-border-color:black; -fx-background-color: #d9dff0;");
+		});
+		
+	
+		last_row[2].setOnAction(e->{
+			text.setText((text.getText()+" " +last_row[2].getText()+" "));
+			Toolkit.getDefaultToolkit().beep();
+			last_row[2].setStyle("-fx-border-color:black; -fx-background-color: #d9dff0;");
+		});
+		
+		
+		last_row[3].setOnAction(e->{
+			text.setText((text.getText()+" "+last_row[3].getText()+" "));
+			Toolkit.getDefaultToolkit().beep();
+			last_row[3].setStyle("-fx-border-color:black; -fx-background-color: #d9dff0;");
+		});
+////////////////////////////////////////////////////////////////////////////////////
+//////equal event /////////////////
+		equal.setOnAction(e->{
+			String x= text.getText();
+			Object result="";
+			ScriptEngineManager manager = new ScriptEngineManager();
+			ScriptEngine engine = manager.getEngineByName("js");
+			try {
+				 result = engine.eval(x);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		       
+			
+			text.setText(result+"");
+			});
+   }}
+   
+   ////////////////////////////////////////////
