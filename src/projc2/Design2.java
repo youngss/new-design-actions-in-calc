@@ -56,7 +56,7 @@ public class Design2 extends Application{
 		
 		////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
-		
+		//Dsign numbers
 		
 		  for(int i =1; i<10 ;i++){
 			  arr[i]= new Button(Integer.toString(i));
@@ -78,6 +78,7 @@ public class Design2 extends Application{
 			      * 
 			      * 
 			      */
+			     //design sign
 		      Button []arr2= new Button[10];
 		      for(int i =0; i<10 ;i++){	
 		    	  arr2[i]= new Button();
